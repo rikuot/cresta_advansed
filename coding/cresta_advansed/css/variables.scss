@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$breakpoint: (
+  s: 'screen and (max-width: 375px)',
+  m: 'screen and (max-width: 768px)',
+  l: 'screen and (max-width: 1440px)'
+);
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+     @content;
+    }
+  }
+
+@mixin btn{
+    max-width: 160px;
+    padding:12px 0;
+    display: block;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.015em;
+    line-height: 1em;
+    text-align: center;
+}
+
+body{ 
+    box-sizing: border-box;
+    color:#515151;
+    font-family:'Montserrat', 'Noto Sans JP', sans-serif;
+    a{
+        text-decoration: none;
+        font-size:14px;
+        font-weight:bold;
+        color:#fff;
+    }
+    .page-title{
+        font-size:72px;
+        font-weight:800;
+        color:#FFF;
+    }
+    .content-title{
+        font-size:32px;
+        font-weight:900;
+        letter-spacing: 0.032em;
+        @include mq(m){
+            font-size: 28px;
+        }
+    }
+    .sub-title{
+        font-size:24px;
+        font-weight:bold;
+    }
+    p{
+        font-size: 16px;
+        font-weight:400;
+    }
+    img{
+        max-width:100%;
+        height:auto;
+    }
+}
+
